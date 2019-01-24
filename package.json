@@ -4,8 +4,8 @@
   "description": "Manage meter readings",
   "main": "app.js",
   "scripts": {
-    "getreading": "sls invoke local -f getMeterReading -p testfiles/getMeterReading.json",
-    "postreading": "sls invoke local -f postMeterReading -p testfiles/postMeterReading.json",
+    "present": "sls invoke local -f Present -p testfiles/getMeterReading.json",
+    "accept": "sls invoke local -f Accept -p testfiles/postMeterReading.json",
     "test": "mocha specs"
   },
   "author": "Jonah Acquah",

@@ -8,7 +8,7 @@ stage: dev
 region: eu-west-1
 
 functions:
-  getMeterReading:
+  Present:
     handler: handlers/meterReadingHandler.getMeterReading
 
     events:
@@ -16,7 +16,7 @@ functions:
           path: /meter-read/{customerid}/{meterid}
           method: get
 
-  postMeterReading:
+  Accept:
     handler: handlers/meterReadingHandler.postMeterReading
 
     events:
