@@ -8,19 +8,18 @@ stage: dev
 region: eu-west-1
 
 functions:
-  meterfunction:
-    handler: app.handler
+  getMeterReading:
+    handler: handlers/meterReadingHandler.getMeterReading
+
+    events:
+      - http:
+          path: /meter-read/{customerid}/{meterid}
+          method: get
+
+  postMeterReading:
+    handler: handlers/meterReadingHandler.postMeterReading
 
     events:
       - http:
           path: /meter-read
-          method: get
-      - http:
-          path: /meter-read/{customerid}/{meterid}
-          method: get
-      - http:
-          path: /meter-read
           method: post
-
-plugins:
-  - serverless-offline

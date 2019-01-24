@@ -4,16 +4,20 @@
   "description": "Manage meter readings",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "getreading": "sls invoke local -f getMeterReading -p testfiles/getMeterReading.json",
+    "postreading": "sls invoke local -f postMeterReading -p testfiles/postMeterReading.json",
+    "test": "mocha specs"
   },
   "author": "Jonah Acquah",
   "license": "UNLICENCED",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "serverless-http": "^1.9.0"
+    "jsonschema": "^1.2.4",
+    "memory-cache": "^0.2.0"
   },
   "devDependencies": {
-    "serverless-offline": "^4.1.4"
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "serverless-offline": "^4.1.4",
+    "sinon": "^7.2.3"
   }
 }
